@@ -1,5 +1,6 @@
 import React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import Section from '../components/Section';
@@ -8,37 +9,47 @@ import Container from '../components/Container';
 const faqs = [
   {
     question: 'What is OpenSTR?',
-    answer: 'OpenSTR is an open-source, self-hosted property management platform. It handles the operational side of running rental properties: guest communication, cleaning coordination, booking management, and the workflows that keep a property running between stays. You install it on your own infrastructure and own everything it produces.',
+    answer: 'A self-hosted, open-source cleaning management system for short-term rental hosts. It handles scheduling, room checklists, photo evidence, supply tracking, and cleaner coordination — all from your own server.',
   },
   {
     question: 'Is it only for Airbnb?',
-    answer: 'No. OpenSTR is platform-agnostic. It is designed to work with any booking channel — Airbnb, Vrbo, direct bookings, or any combination. The platform manages your operations, not your listings. You can connect it to the channels you already use.',
+    answer: 'Built for Airbnb hosts, but it works with any STR platform. It imports your booking calendar via iCal, so any platform that exports iCal (Vrbo, direct bookings, etc.) works.',
   },
   {
     question: 'Does it support long-term rentals?',
-    answer: 'Yes. OpenSTR supports both short-term rentals and long-term leases. If you manage a mix of vacation rentals and residential tenants, you can run both from the same installation. The workflows are different, and OpenSTR handles both.',
+    answer: 'OpenSTR is focused on short-term rental operations. The cleaning workflow, iCal scheduling, and photo evidence system are built around STR turnovers.',
   },
   {
     question: 'Is it free?',
-    answer: 'Yes. OpenSTR is free and open source, released under the MIT license. There are no subscription fees, no per-property charges, and no premium tiers. You pay for the infrastructure you choose to run it on, which you control entirely.',
+    answer: 'Yes. OpenSTR is free and open source under the GPL-3.0 license. No subscription fees, no per-property charges. You run it on your own infrastructure.',
   },
   {
     question: 'Can I self-host it?',
-    answer: 'Yes — that is the point. OpenSTR is designed to be self-hosted. You can run it on a VPS, a dedicated server, or a cloud provider of your choice. The documentation covers common deployment setups, and the community can help with questions. You do not need a dedicated IT team to get it running.',
+    answer: 'Yes — that is the point. Run it on a Linux server using Docker. The repo includes a deploy.sh script that handles building, migrations, and SSL setup. Node.js 20+ and Docker are the only prerequisites.',
   },
 ];
 
 const FaqPage: React.FC<PageProps> = () => {
   return (
     <Layout>
-      {/* Page header */}
-      <div className="bg-stone-50 border-b border-stone-100 py-20">
-        <Container narrow>
-          <p className="text-xs uppercase tracking-widest text-stone-400 mb-3">FAQ</p>
-          <h1 className="text-4xl md:text-5xl font-heading font-semibold text-stone-900 leading-tight">
-            Common questions.
-          </h1>
-        </Container>
+      <div className="relative h-72 md:h-96 overflow-hidden">
+        <StaticImage
+          src="../images/happyguests.png"
+          alt="Happy guests at a well-managed rental property"
+          layout="fullWidth"
+          objectFit="cover"
+          objectPosition="center"
+          style={{ position: 'absolute', inset: 0, height: '100%' }}
+          placeholder="blurred"
+          quality={85}
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 h-full flex items-end px-6 md:px-12 pb-10">
+          <div>
+            <p className="text-xs uppercase tracking-widest text-stone-300 mb-2">FAQ</p>
+            <h1 className="text-4xl md:text-5xl font-heading font-semibold text-white leading-tight">Common questions.</h1>
+          </div>
+        </div>
       </div>
 
       <Section>
@@ -60,9 +71,5 @@ const FaqPage: React.FC<PageProps> = () => {
 export default FaqPage;
 
 export const Head: HeadFC = () => (
-  <Seo
-    title="FAQ — OpenSTR"
-    description="Answers to common questions about OpenSTR — what it is, who it is for, and how to get started."
-    pathname="/faq"
-  />
+  <Seo title="FAQ — OpenSTR" description="Common questions about OpenSTR — self-hosted STR cleaning management." pathname="/faq" />
 );

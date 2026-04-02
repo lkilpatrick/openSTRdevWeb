@@ -1,5 +1,6 @@
 import React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import Section from '../components/Section';
@@ -8,63 +9,58 @@ import Container from '../components/Container';
 const WhyOpenstrPage: React.FC<PageProps> = () => {
   return (
     <Layout>
-      {/* Page header */}
-      <div className="bg-stone-900 py-20">
-        <Container narrow>
-          <p className="text-xs uppercase tracking-widest text-stone-400 mb-3">The case for OpenSTR</p>
-          <h1 className="text-4xl md:text-5xl font-heading font-semibold text-white leading-tight">
-            Your property. Your software. Your rules.
-          </h1>
-        </Container>
+      <div className="relative h-72 md:h-96 overflow-hidden">
+        <StaticImage
+          src="../images/sunrise.png"
+          alt="Rental property at sunrise"
+          layout="fullWidth"
+          objectFit="cover"
+          objectPosition="center 40%"
+          style={{ position: 'absolute', inset: 0, height: '100%' }}
+          placeholder="blurred"
+          quality={85}
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 h-full flex items-end px-6 md:px-12 pb-10">
+          <div>
+            <p className="text-xs uppercase tracking-widest text-stone-300 mb-2">The case for OpenSTR</p>
+            <h1 className="text-4xl md:text-5xl font-heading font-semibold text-white leading-tight">Your property. Your software. Your rules.</h1>
+          </div>
+        </div>
       </div>
 
-      {/* Ownership */}
       <Section>
         <Container narrow>
           <h2 className="text-2xl font-heading font-semibold text-stone-900 mb-4">Ownership</h2>
           <p className="text-stone-600 leading-relaxed mb-4">
-            When you use a commercial property management platform, you are renting access to your own operation. The data you generate — guest records, booking history, maintenance logs, financial reports — lives on someone else's servers, governed by someone else's terms of service.
-          </p>
-          <p className="text-stone-600 leading-relaxed mb-4">
-            OpenSTR inverts that relationship. You install it on infrastructure you control. Your data is stored in a database you own. If you decide to stop using OpenSTR tomorrow, you take everything with you.
+            Most STR tools are SaaS — your cleaning schedules, photo evidence, guest data, and cleaner history all live on someone else's servers. When they change pricing or shut down, you lose everything.
           </p>
           <p className="text-stone-600 leading-relaxed">
-            Ownership is not just a technical detail. It is the foundation of a sustainable operation. You cannot build long-term systems on top of platforms that can change their pricing, deprecate their APIs, or shut down without warning.
+            OpenSTR runs on your own server. Your data stays in your database. If you stop using it tomorrow, you take everything with you.
           </p>
         </Container>
       </Section>
 
-      {/* Flexibility */}
       <Section className="bg-stone-50">
         <Container narrow>
-          <h2 className="text-2xl font-heading font-semibold text-stone-900 mb-4">Flexibility</h2>
+          <h2 className="text-2xl font-heading font-semibold text-stone-900 mb-4">Built for how STR actually works</h2>
           <p className="text-stone-600 leading-relaxed mb-4">
-            Every property operation is different. The workflows that work for a single vacation rental in a beach town are not the same as those for a portfolio of urban apartments. Commercial platforms try to serve everyone with the same product, which means they serve no one particularly well.
-          </p>
-          <p className="text-stone-600 leading-relaxed mb-4">
-            OpenSTR is designed to be configured, extended, and modified. You can build the automations that match your actual process. You can integrate with the tools your team already uses. You can add features that matter to your operation without waiting for a product roadmap that may never prioritize them.
+            Generic property management tools aren't built around the STR turnover cycle. OpenSTR is. It imports your Airbnb calendar automatically, assigns cleaners to specific properties, enforces photo evidence per room, and tracks supply levels inline.
           </p>
           <p className="text-stone-600 leading-relaxed">
-            Flexibility is not about having infinite options. It is about having the right options for your specific situation, and the ability to change them when your situation changes.
+            The mobile app is network-aware — cleaners can view their schedule from anywhere, but cleaning sessions only activate when they're on your local WiFi. No more remote check-ins.
           </p>
         </Container>
       </Section>
 
-      {/* Self-hosting */}
       <Section>
         <Container narrow>
-          <h2 className="text-2xl font-heading font-semibold text-stone-900 mb-4">Self-hosting</h2>
+          <h2 className="text-2xl font-heading font-semibold text-stone-900 mb-4">Open source, GPL-3.0</h2>
           <p className="text-stone-600 leading-relaxed mb-4">
-            Self-hosting means running software on infrastructure you control — a server you own, a cloud account in your name, or a managed host you have chosen. It is not complicated, and it does not require a dedicated IT team.
-          </p>
-          <p className="text-stone-600 leading-relaxed mb-4">
-            The benefits are concrete. Your data does not leave your environment. Your costs are predictable and scale with your actual usage. You are not subject to pricing changes, feature removals, or platform shutdowns. You can audit exactly what the software is doing.
-          </p>
-          <p className="text-stone-600 leading-relaxed mb-4">
-            OpenSTR is built to be straightforward to deploy. The documentation covers common hosting environments, and the community can help with setup questions. The goal is to make self-hosting accessible to operators who are not developers, not just to engineers who already know how to do it.
+            Every line of code is public. Use it, modify it, deploy it for your own STR business. If you distribute a modified version, it stays open source under the same license.
           </p>
           <p className="text-stone-600 leading-relaxed">
-            If you manage properties for a living, you already understand the value of owning your assets. OpenSTR applies that same principle to your software.
+            You already understand the value of owning your properties. OpenSTR applies that same principle to your software.
           </p>
         </Container>
       </Section>
@@ -75,9 +71,5 @@ const WhyOpenstrPage: React.FC<PageProps> = () => {
 export default WhyOpenstrPage;
 
 export const Head: HeadFC = () => (
-  <Seo
-    title="Why OpenSTR — Ownership, Flexibility, and Self-Hosting"
-    description="The case for ownership, flexibility, and self-hosting your rental property management platform."
-    pathname="/why-openstr"
-  />
+  <Seo title="Why OpenSTR" description="Self-hosted, open-source STR cleaning management. Your data, your server, your rules." pathname="/why-openstr" />
 );

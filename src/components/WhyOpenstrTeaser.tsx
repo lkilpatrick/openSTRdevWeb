@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
+
+const GITHUB = 'https://github.com/lkilpatrick/openstr';
 import Section from './Section';
 import Container from './Container';
 
