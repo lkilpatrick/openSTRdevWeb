@@ -1,35 +1,50 @@
 # OpenSTR Marketing Site
 
-Premium, image-first marketing site for [OpenSTR](https://github.com/openstr/openstr) — an open-source, self-hosted rental property management platform.
+The marketing site for [OpenSTR](https://github.com/lkilpatrick/openstr) — open-source, self-hosted cleaning management for short-term rental hosts.
 
-Built with Gatsby, TypeScript, and Tailwind CSS. Fully static, no CMS, no server runtime.
+**Live site: [openstr.dev](https://openstr.dev)**
+
+---
+
+## About
+
+This repo contains the marketing site only. For the actual OpenSTR platform (API, admin panel, mobile app), see the [main repository](https://github.com/lkilpatrick/openstr).
+
+The site is built with Gatsby, TypeScript, and Tailwind CSS. Fully static, no CMS, no server runtime. Deployed to Firebase Hosting via GitHub Actions on every push to `main`.
 
 ---
 
 ## Local Development
 
-**Prerequisites:** Node.js 18+ and npm.
+**Prerequisites:** Node.js 20+
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
 npm run develop
 ```
 
-The site will be available at `http://localhost:8000`.
+Site runs at `http://localhost:8000`.
 
 ```bash
-# Type check
-npm run typecheck
-
-# Build for production
-npm run build
-
-# Preview production build locally
-npm run serve
+npm run build    # Production build → public/
+npm run serve    # Preview production build locally
+npm run clean    # Clear Gatsby cache
 ```
+
+---
+
+## Deployment
+
+Pushes to `main` automatically build and deploy to Firebase Hosting via the GitHub Actions workflow in `.github/workflows/deploy.yml`.
+
+To deploy manually:
+
+```bash
+npm run build
+firebase deploy --only hosting --project openstrdev
+```
+
+Requires the Firebase CLI and a valid `FIREBASE_TOKEN`.
 
 ---
 
@@ -37,48 +52,17 @@ npm run serve
 
 ```
 src/
-  components/     # Shared UI components (Layout, Header, Footer, Section, Container, Button, etc.)
-  images/         # Source images (processed by gatsby-plugin-image)
-  pages/          # Gatsby pages — one file per route
-  styles/         # Global CSS (Tailwind base import + Google Fonts)
-gatsby-config.ts  # Gatsby plugin configuration
-tailwind.config.js
-tsconfig.json
-firebase.json     # Firebase Hosting config
+  components/   # Shared UI (Layout, Header, Footer, Hero, etc.)
+  images/       # Optimized images via gatsby-plugin-image
+  pages/        # One file per route (/, /about, /why-openstr, /contribute, /faq)
+  styles/       # Global CSS — Tailwind base + Google Fonts
+source/         # Original source images (not served directly)
 ```
-
----
-
-## Deployment
-
-The site deploys to Firebase Hosting from the `public/` build output.
-
-**Prerequisites:** [Firebase CLI](https://firebase.google.com/docs/cli) installed and authenticated.
-
-```bash
-# Install Firebase CLI (if not already installed)
-npm install -g firebase-tools
-
-# Authenticate
-firebase login
-
-# Build the site
-npm run build
-
-# Deploy to Firebase Hosting
-firebase deploy --only hosting
-```
-
-Update `.firebaserc` with your Firebase project ID before deploying.
 
 ---
 
 ## Contributing
 
-Contributions to the marketing site are welcome. The same principles that apply to OpenSTR apply here: clear code, honest copy, and no unnecessary complexity.
+Content changes: edit the relevant file in `src/pages/` or `src/components/`.
 
-- **Content changes:** Edit the relevant page in `src/pages/` or component in `src/components/`
-- **Design changes:** Tailwind utility classes throughout — no separate CSS files
-- **Images:** Add to `src/images/` and reference via `StaticImage` with a descriptive `alt` attribute
-
-Open an issue or pull request on the [OpenSTR GitHub repository](https://github.com/openstr/openstr).
+Open an issue or pull request on this repo, or on the [main OpenSTR repository](https://github.com/lkilpatrick/openstr).
