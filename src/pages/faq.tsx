@@ -38,7 +38,7 @@ const FaqPage: React.FC<PageProps> = () => {
           alt="Happy guests at a well-managed rental property"
           layout="fullWidth"
           objectFit="cover"
-          objectPosition="center"
+          objectPosition="top"
           style={{ position: 'absolute', inset: 0, height: '100%' }}
           placeholder="blurred"
           quality={85}

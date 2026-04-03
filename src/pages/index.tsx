@@ -5,6 +5,7 @@ import Seo from '../components/Seo';
 import Hero from '../components/Hero';
 import ProblemSolution from '../components/ProblemSolution';
 import ValueProps from '../components/ValueProps';
+import Screenshots from '../components/Screenshots';
 import ContributorCta from '../components/ContributorCta';
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -13,6 +14,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Hero />
       <ProblemSolution />
       <ValueProps />
+      <Screenshots />
       <ContributorCta />
     </Layout>
   );

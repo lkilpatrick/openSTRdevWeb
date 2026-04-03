@@ -56,6 +56,33 @@ const AboutPage: React.FC<PageProps> = () => {
         </Container>
       </Section>
 
+      <Section className="bg-white">
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="rounded-sm overflow-hidden border border-stone-200 shadow-sm">
+              <StaticImage
+                src="../images/adminissues.png"
+                alt="OpenSTR admin issues tracker"
+                layout="fullWidth"
+                objectFit="cover"
+                placeholder="blurred"
+                quality={90}
+              />
+            </div>
+            <div className="rounded-sm overflow-hidden border border-stone-200 shadow-sm">
+              <StaticImage
+                src="../images/adminchecklist.png"
+                alt="OpenSTR admin checklist view"
+                layout="fullWidth"
+                objectFit="cover"
+                placeholder="blurred"
+                quality={90}
+              />
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       <Section>
         <Container narrow>
           <h2 className="text-2xl font-heading font-semibold text-stone-900 mb-4">Who it is for</h2>
