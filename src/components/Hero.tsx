@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
             Manage your rental property on software you control
           </h1>
           <p className="text-lg text-gray-200 mb-10 max-w-lg">
-            Self-hosted cleaning management for short-term rental hosts. Scheduling, checklists, photo evidence, and supply tracking — open source under GPL-3.0.
+            Cleaning management for STR hosts. Scheduling, checklists, and photo evidence — self-hosted and open source.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="primary" href={GITHUB} external>View on GitHub</Button>

@@ -33,7 +33,7 @@ const AboutPage: React.FC<PageProps> = () => {
         <Container narrow>
           <h2 className="text-2xl font-heading font-semibold text-stone-900 mb-4">A real system for STR hosts</h2>
           <p className="text-stone-600 leading-relaxed mb-4">
-            OpenSTR replaces the chaos of WhatsApp messages, spreadsheets, and Google Forms with a proper cleaning management system. Scheduling, checklists, photo evidence, supply tracking, and monitoring — all in one place.
+            OpenSTR replaces the chaos of messages, spreadsheets, and Google Forms with a proper cleaning management system. Scheduling, checklists, photo evidence, supply tracking, and monitoring — all in one place.
           </p>
           <p className="text-stone-600 leading-relaxed">
             Built for Airbnb hosts. Works for any short-term rental platform. Self-hosted on your own infrastructure, so your data stays yours.
