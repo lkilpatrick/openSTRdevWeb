@@ -19,24 +19,30 @@ const Screenshots: React.FC = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="rounded-sm overflow-hidden border border-stone-200 shadow-sm">
+            <div className="rounded-sm overflow-hidden border border-stone-200 shadow-sm" style={{ height: '320px' }}>
               <StaticImage
                 src="../images/Dashboard.png"
                 alt="OpenSTR admin dashboard showing upcoming stays and cleaning schedule"
                 layout="fullWidth"
                 objectFit="cover"
+                objectPosition="top center"
                 placeholder="blurred"
                 quality={90}
+                style={{ height: '100%' }}
+                imgStyle={{ objectFit: 'cover', objectPosition: 'top center' }}
               />
             </div>
-            <div className="rounded-sm overflow-hidden border border-stone-200 shadow-sm">
+            <div className="rounded-sm overflow-hidden border border-stone-200 shadow-sm" style={{ height: '320px' }}>
               <StaticImage
                 src="../images/adminchecklist.png"
                 alt="OpenSTR admin checklist view showing room-by-room tasks"
                 layout="fullWidth"
                 objectFit="cover"
+                objectPosition="top center"
                 placeholder="blurred"
                 quality={90}
+                style={{ height: '100%' }}
+                imgStyle={{ objectFit: 'cover', objectPosition: 'top center' }}
               />
             </div>
           </div>
