@@ -963,10 +963,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cookie-parser" class="md-nav__link">
+  <a href="#json-body-parser" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cookie Parser
+        JSON Body Parser
       
     </span>
   </a>
@@ -974,10 +974,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#json-body-parser" class="md-nav__link">
+  <a href="#cookie-parser" class="md-nav__link">
     <span class="md-ellipsis">
       
-        JSON Body Parser
+        Cookie Parser
       
     </span>
   </a>
@@ -1494,10 +1494,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cookie-parser" class="md-nav__link">
+  <a href="#json-body-parser" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cookie Parser
+        JSON Body Parser
       
     </span>
   </a>
@@ -1505,10 +1505,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#json-body-parser" class="md-nav__link">
+  <a href="#cookie-parser" class="md-nav__link">
     <span class="md-ellipsis">
       
-        JSON Body Parser
+        Cookie Parser
       
     </span>
   </a>
@@ -1649,14 +1649,14 @@
 <li><strong>Production</strong>: Configure via <code>ALLOWED_ORIGINS</code> env var (comma-separated)</li>
 <li>Credentials enabled for cookie-based authentication</li>
 </ul>
-<h3 id="cookie-parser">Cookie Parser<a class="headerlink" href="#cookie-parser" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cookieParser</span><span class="p">());</span>
-</code></pre></div>
-<p>Parses session cookies for Better-Auth session management.</p>
 <h3 id="json-body-parser">JSON Body Parser<a class="headerlink" href="#json-body-parser" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
 </code></pre></div>
 <p>Parses JSON request bodies.</p>
+<h3 id="cookie-parser">Cookie Parser<a class="headerlink" href="#cookie-parser" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cookieParser</span><span class="p">());</span>
+</code></pre></div>
+<p>Parses session cookies for Better-Auth session management.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Better-Auth routes are registered <strong>before</strong> the JSON parser, as Better-Auth handles its own body parsing.</p>
@@ -1729,9 +1729,9 @@
 <ol>
 <li><code>helmet()</code> — Security headers</li>
 <li><code>cors()</code> — CORS configuration</li>
-<li><code>cookieParser()</code> — Cookie parsing</li>
 <li><strong>Better-Auth handler</strong> — Auth endpoint routes (<code>/api/auth/*</code>)</li>
 <li><code>express.json()</code> — JSON body parsing</li>
+<li><code>cookieParser()</code> — Cookie parsing</li>
 <li>Static file serving (<code>/photos/*</code>)</li>
 <li>Route handlers (with <code>requireAuth</code>, <code>requireRole</code>, <code>requirePropertyAccess</code> as needed)</li>
 </ol>
