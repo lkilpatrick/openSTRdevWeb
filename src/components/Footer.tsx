@@ -24,6 +24,9 @@ const Footer: React.FC = () => {
               {label}
             </Link>
           ))}
+          <a href="https://openstr.dev/docs/" className="text-sm text-stone-500 hover:text-stone-900 transition-colors">
+            Docs
+          </a>
           <a href={GITHUB} target="_blank" rel="noopener noreferrer" className="text-sm text-stone-500 hover:text-stone-900 transition-colors">
             GitHub
           </a>

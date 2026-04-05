@@ -10,6 +10,10 @@ const NAV_LINKS = [
   { label: 'FAQ', path: '/faq' },
 ];
 
+const EXTERNAL_LINKS = [
+  { label: 'Docs', href: 'https://openstr.dev/docs/' },
+];
+
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -25,6 +29,11 @@ const Header: React.FC = () => {
             <Link key={path} to={path} className="text-sm text-stone-600 hover:text-stone-900 transition-colors" activeClassName="text-stone-900 font-medium">
               {label}
             </Link>
+          ))}
+          {EXTERNAL_LINKS.map(({ label, href }) => (
+            <a key={label} href={href} className="text-sm text-stone-600 hover:text-stone-900 transition-colors">
+              {label}
+            </a>
           ))}
           <a href={GITHUB} target="_blank" rel="noopener noreferrer" className="text-sm px-4 py-1.5 border border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white transition-colors rounded-sm">
             GitHub
@@ -53,6 +62,11 @@ const Header: React.FC = () => {
             <Link key={path} to={path} className="text-sm text-stone-600 hover:text-stone-900 transition-colors" activeClassName="text-stone-900 font-medium" onClick={() => setMenuOpen(false)}>
               {label}
             </Link>
+          ))}
+          {EXTERNAL_LINKS.map(({ label, href }) => (
+            <a key={label} href={href} className="text-sm text-stone-600 hover:text-stone-900 transition-colors">
+              {label}
+            </a>
           ))}
           <a href={GITHUB} target="_blank" rel="noopener noreferrer" className="text-sm text-stone-600 hover:text-stone-900 transition-colors">
             GitHub ↗
